@@ -1,24 +1,22 @@
 #!/usr/bin/env python
-import os
-import re
+from setuptools import setup
+from pathlib import Path
 
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text()
 
 
 dist = setup(
     name='pyspark-jira',
-    version="0.0.1",
+    version="0.0.2",
     description='PySpark JIRA Data Source',
     author='Hyukjin Kwon',
     author_email='gurwls223@apache.org',
     url='https://github.com/HyukjinKwon/pyspark-jira',
     license='Apache License 2.0',
     packages=['pyspark_jira'],
-    long_description=open('README.md').read(),
-    long_description_content_type="text/markdown",
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     classifiers=[
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
